@@ -795,6 +795,7 @@ Other options:
  - `keep_fnames` -- default `false`.  Pass `true` to not mangle
   function names.  Useful for code relying on `Function.prototype.name`.
   See also: the `keep_fnames` [compress option](#compressor-options).
+ - `isogram` -- Pass an array of preferred non-repeating characters or tokens to use as variable names to use before replacing with base54 characters. (Only useful for small scripts)
 
   Examples:
 
@@ -814,6 +815,10 @@ Other options:
 
   UglifyJS.minify("tst.js", { mangle: { toplevel: true } }).code;
   // 'function n(n,a){}var a;'
+
+
+  UglifyJS.minify("tst.js", { mangle: { isogram: [ 'bat', 'man'] } }).code;
+  // 'function funcName(bat,man){}var globalVar;'
   ```
 
 ##### mangleProperties options
