@@ -47,5 +47,13 @@
   "scripts": {
     "test": "node test/run-tests.js"
   },
-  "keywords": ["uglify", "uglify-js", "minify", "minifier"]
+  "keywords": ["uglify", "uglify-js", "minify", "minifier"],
+  "dependencies": {
+    "source-map": "~0.5.1",
+    "yargs": "~3.10.0"
+  },
+  "devDependencies": {
+    "acorn": "~5.0.3",
+    "mocha": "~2.3.4"
+  }
 }

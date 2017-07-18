@@ -796,6 +796,7 @@ Other options:
   function names.  Useful for code relying on `Function.prototype.name`.
   See also: the `keep_fnames` [compress option](#compressor-options).
  - `isogram` -- Pass an array of preferred non-repeating characters or tokens to use as variable names to use before replacing with base54 characters. (Only useful for small scripts)
+- `chars` -- Pass a string of two or more non-repeating characters to use for variable names.
 
   Examples:
 
@@ -816,9 +817,20 @@ Other options:
   UglifyJS.minify("tst.js", { mangle: { toplevel: true } }).code;
   // 'function n(n,a){}var a;'
 
-
   UglifyJS.minify("tst.js", { mangle: { isogram: [ 'bat', 'man'] } }).code;
   // 'function funcName(bat,man){}var globalVar;'
+  ```
+
+  ```javascript
+  //tst.js
+  var globalVar;
+  function funcName(firstLongName, anotherLongName, yetAnother)
+  {
+    var myVariable = firstLongName +  anotherLongName + yetAnother;
+  }
+
+  UglifyJS.minify("tst.js", { mangle: { chars: 'oe' } }).code;
+  // 'function funcName(o,e,oo){}var globalVar;'
   ```
 
 ##### mangleProperties options
