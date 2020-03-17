@@ -33,7 +33,7 @@
     "yargs": "~3.10.0"
   },
   "devDependencies": {
-    "acorn": "~5.0.3",
+    "acorn": "~>5.7.4",
     "mocha": "~2.3.4"
   },
   "optionalDependencies": {
@@ -45,15 +45,12 @@
     ]
   },
   "scripts": {
-    "test": "node test/run-tests.js"
+    "test": "node test/test.js"
   },
-  "keywords": ["uglify", "uglify-js", "minify", "minifier"],
-  "dependencies": {
-    "source-map": "~0.5.1",
-    "yargs": "~3.10.0"
-  },
-  "devDependencies": {
-    "acorn": "~5.0.3",
-    "mocha": "~2.3.4"
-  }
+  "keywords": [
+    "uglify",
+    "uglify-js",
+    "minify",
+    "minifier"
+  ]
 }
